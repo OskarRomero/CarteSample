@@ -1,9 +1,9 @@
 # Carte
 Carte is an innovative digital menu and ordering platform built for restaurants. The platform's feature set is built intentionally with the diner in mind, improving their experience and reducing order friction. Features include the creation of customized menus, ingredients, images, dietary restrictions, prices. Carte's customers can find restaurants, dishes by dietary preferences & restrictions, order and pay on mobile device.
 
-My role as a software engineer was to implement the functionality of the shopping cart. My contribution to this was to author all the code that that spanned the back end, middle tier, and front end of this shopping cart feature. Below is a list of of actions I took to get the cart up and running.
+My role as a software engineer was to implement the functionality of the shopping cart. My contribution to this was to author all the code that that spans the back, middle, and font tier of this shopping cart feature. Below is a list of of actions I took to get the cart up and running.
 
-•	Created necessary tables, established foreign key relationships, and wrote stored procedures (executing joins and pagination) in SQL database
+•	Created necessary tables, established foreign key relationships, and wrote stored procedures (including joins and pagination) in SQL database
 
 •	Created models, services, and API end points with .NET using C# and tested them with Postman
 
