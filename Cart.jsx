@@ -42,7 +42,6 @@ const Cart = ({ currentUser }) => {
     const [selectedOrg, setSelectedOrg] = useState(`Lucca's`);
     const location = useLocation();
     useEffect(() => {
-        //if cart preview passed payload, getAllByCreatedBy Id passed in else, get createdAllBy Id 5
         if (location?.state?.type === 'order_Data' && location?.state?.payload && location?.state?.payload?.userId) {
             _logger('location.state.payload:', location.state.payload);
             cartService.getAllByCreatedBy(location.state.payload.userId).then(onGetAllSuccess).catch(onGetAllErr);
