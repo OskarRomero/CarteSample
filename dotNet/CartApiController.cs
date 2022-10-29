@@ -76,14 +76,14 @@ namespace Sabio.Web.Api.Controllers
         }
 
         [HttpGet("createdby/{createdById:int}")]
-        public ActionResult<ItemsResponse<CartItem>> GetAll(int createdById)//returns ActionResult of Address. ItemsResonse is a type of Address
+        public ActionResult<ItemsResponse<CartItem>> GetAll(int createdById)
         {
             int code = 200;
-            BaseResponse response = null;//new instance
+            BaseResponse response = null;
 
             try
             {
-                List<CartItem> list = _service.GetAllByCreatedBy(createdById);//getting the list
+                List<CartItem> list = _service.GetAllByCreatedBy(createdById);
 
                 if (list == null)
                 {
