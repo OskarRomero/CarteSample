@@ -8,7 +8,7 @@ GO
 -- Code Reviewer:
 
 -- MODIFIED BY: Oscar Romero
--- MODIFIED DATE:9/8/22
+-- MODIFIED DATE:
 -- Code Reviewer:
 -- Note:
 -- =============================================
