@@ -81,7 +81,7 @@ BEGIN
 	FROM [dbo].[Cart] as c 
 	inner join dbo.MenuItems as mi on c.MenuItemId = mi.Id
 	inner join dbo.Organizations as o on mi.OrganizationId = o.Id
-	inner join dbo.Locations as l on o.PrimaryLocationId = l.Id --are these referencing one another?
+	inner join dbo.Locations as l on o.PrimaryLocationId = l.Id 
 		  
 	Where c.CreatedBy = @CreatedBy
 
