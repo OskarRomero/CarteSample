@@ -15,7 +15,7 @@ GO
 CREATE proc [dbo].[Cart_Select_ByCreatedBy]
 				@CreatedBy int
 as
-/*  
+/*              Test Code
 		Declare @CreatedBy int = 1
 
 		Execute [dbo].[Cart_Select_ByCreatedBy]
@@ -24,7 +24,7 @@ as
 BEGIN
 	--c=Cart mi=menuItem o=organizations l=location
 	SELECT 
-		 c.[Id] -- customer doesn't have to see this Id?
+		 c.[Id] 
 		,c.[MenuItemId]
 		,c.[Quantity]
 		,mi.Name as MenuItemName
@@ -40,7 +40,7 @@ BEGIN
 			Select  i.Id
 				,i.Name
 				,i.ImageUrl
-				,i.measure --isInStock, isDeleted, Restriction Id ?
+				,i.measure 
 				,FoodWarningTypes = 
 					(
 					select fwt.Id
