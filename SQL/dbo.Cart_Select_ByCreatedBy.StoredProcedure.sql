@@ -37,34 +37,34 @@ BEGIN
 		,l.Zip as LocationZip
 		,Ingredients = 
 			(
-			Select  i.Id
+			SELECT  i.Id
 				,i.Name
 				,i.ImageUrl
 				,i.measure 
 				,FoodWarningTypes = 
 					(
-					select fwt.Id
-							,fwt.name
+					SELECT fwt.Id
+					      ,fwt.name
 					from dbo.FoodWarningTypes as fwt 
 					inner join dbo.IngredientWarnings as iw	on fwt.Id = iw.IngredientId 
 					where iw.IngredientId = i.Id
-					for JSON AUTO
+					FOR JSON AUTO
 					)
 				,PurchaseRestrictions = 
 					(
-					Select pr.Id
-							,pr.Name
-					from dbo.PurchaseRestrictions as pr 
+					SELECT pr.Id
+					      ,pr.Name
+					FROM dbo.PurchaseRestrictions as pr 
 						inner join dbo.Ingredients as i	on i.RestrictionId = pr.Id 
 						inner join dbo.MenuItemIngredients as mii on mii.IngredientId = i.Id
-						where mii.CreatedBy = @CreatedBy
-					for JSON AUTO
+						WHERE mii.CreatedBy = @CreatedBy
+					FOR JSON AUTO
 					)
-			from dbo.Ingredients as i 
+			FROM dbo.Ingredients as i 
 				inner join dbo.MenuItemIngredients as mii on i.Id = mii.IngredientId
 				inner join dbo.MenuItems as mi on mii.MenuItemId = mi.Id
-			where mi.Id = mii.MenuItemId AND i.IsInStock = 1 AND mi.IsDeleted = 0
-			for JSON AUTO
+			WHERE mi.Id = mii.MenuItemId AND i.IsInStock = 1 AND mi.IsDeleted = 0
+			FOR JSON AUTO
 		    )
 		,FoodSafeTypes = 
 			(
@@ -83,7 +83,7 @@ BEGIN
 	inner join dbo.Organizations as o on mi.OrganizationId = o.Id
 	inner join dbo.Locations as l on o.PrimaryLocationId = l.Id 
 		  
-	Where c.CreatedBy = @CreatedBy
+	WHERE c.CreatedBy = @CreatedBy
 
 		
 END
