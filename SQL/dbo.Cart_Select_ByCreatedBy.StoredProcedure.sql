@@ -13,7 +13,7 @@ GO
 -- Note:
 -- =============================================
 CREATE proc [dbo].[Cart_Select_ByCreatedBy]
-				@CreatedBy int
+		@CreatedBy int
 as
 /*              Test Code
 		Declare @CreatedBy int = 1
