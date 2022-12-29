@@ -45,9 +45,9 @@ BEGIN
 					(
 					SELECT fwt.Id
 					      ,fwt.name
-					from dbo.FoodWarningTypes as fwt 
+					FROM dbo.FoodWarningTypes as fwt 
 					inner join dbo.IngredientWarnings as iw	on fwt.Id = iw.IngredientId 
-					where iw.IngredientId = i.Id
+					WHERE iw.IngredientId = i.Id
 					FOR JSON AUTO
 					)
 				,PurchaseRestrictions = 
