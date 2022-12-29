@@ -49,11 +49,11 @@ BEGIN
 				 ,[Quantity]
 				 ,[CreatedBy]
 				 ,[ModifiedBy])
-     VALUES
-           (@MenuItemId
-		   ,@Quantity
-			,@CreatedBy
-			,@ModifiedBy)
+        VALUES
+          			 (@MenuItemId
+		  		 ,@Quantity
+				 ,@CreatedBy
+				 ,@ModifiedBy)
 
 	SET @Id = SCOPE_IDENTITY()
 
