@@ -42,7 +42,7 @@ BEGIN
 		,l.Zip as LocationZip
 		,Ingredients = 
 			(
-			SELECT   i.Id
+			SELECT           i.Id
 					,i.Name
 					,i.ImageUrl
 					,i.measure 
@@ -66,7 +66,7 @@ BEGIN
 			FROM dbo.Ingredients as i 
 				inner join dbo.MenuItemIngredients as mii on i.Id = mii.IngredientId
 			WHERE mii.MenuItemId=mi.Id 
-			--AND i.IsInStock = 1 AND mi.IsDeleted = 0
+				--AND i.IsInStock = 1 AND mi.IsDeleted = 0
 			FOR JSON AUTO
 			)
 		,FoodSafeTypes = 
@@ -82,7 +82,7 @@ BEGIN
 		,c.CustomerNotes
 		/*,Modifications = 
 			(
-			SELECT	 mm.Id
+			SELECT	         mm.Id
 					,mm.Count
 					,mm.CostChange
 			FROM dbo.MenuModifications as mm
@@ -94,7 +94,7 @@ BEGIN
 		inner join dbo.MenuItems as mi on c.MenuItemId = mi.Id
 		inner join dbo.Organizations as o on mi.OrganizationId = o.Id
 		inner join dbo.Locations as l on o.PrimaryLocationId = l.Id 
-	Where c.CreatedBy = @CreatedBy
+	WHERE c.CreatedBy = @CreatedBy
 
 		
 END
